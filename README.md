@@ -1,8 +1,6 @@
 # lab4
 CMPT225 Lab4
 
-
-
 In this lab you build two classic data structures yourself: a **stack** stored in a singly linked list and a **queue** stored in a circular array. Then you use your stack to solve two small problems. 
 
 ## Objectives
@@ -149,12 +147,13 @@ The method must change `q` itself. Writing `q = new CircularQueue(...)` inside t
 - `toBinary(0)`, a large `n` such as `Integer.MAX_VALUE`, and a negative `n`;
 - `reverse` on an empty queue, a one-element queue and a full queue.
 
-## Marking
-| Part | Marks |
-|:--|:--:|:--|:--:|
-| 1. `LinkedStack` | 15 |
-| 2. `CircularQueue` | 20 |
-| 3. `toBinary` and `reverse` | 20 |
-| **Total** | **55** |
+## Rubric
+### 
 
+## Submission
+Zip the project directory and submit the ZIP file to Canvas.
+**Please do not remove any of the build artifacts or the manifest files. Zip the project directory as is.**
+**Your program must compile and run successfully. If your program does not compile or crashes during execution, it will receive a grade of zero.**
 
+## Deadline
+Sunday, October 11, 2026, at 11:59 PM PDT
