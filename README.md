@@ -26,7 +26,7 @@ Each method you need to write currently throws an `UnsupportedOperationException
 3. **O(1) operations.** Every method in Parts 1 and 2 must run in O(1) time: no loops, and never shift elements.
 4. **Use your stack in Part 3.** Both Part 3 methods must use a `LinkedStack`.
 
-## Part 1: `LinkedStack` (15 marks)
+## Part 1: `LinkedStack` 
 A stack of `int` values stored in a singly linked list of `Node`s. The **top of the stack is the first node of the list**, so every operation works at the front of the list and nothing ever walks down it.
 
 ```text
@@ -53,7 +53,7 @@ The constructor is given: a new stack has `top == null` and `size == 0`.
 
 > **Hint:** `push` creates a new node whose `next` is the old top. Draw the list before and after each operation to visualize what's happening internally.
 
-## Part 2: `CircularQueue` (20 marks)
+## Part 2: `CircularQueue` 
 
 A queue of `int` values stored in an array with a fixed capacity. If the front of the queue always stayed at index 0, every `dequeue` would have to shift the remaining elements left, which takes O(n) time. Instead, the queue's elements can start anywhere in the array and **wrap around** from the last index back to index 0.
 
@@ -71,18 +71,6 @@ The elements sit in `count` consecutive slots starting at `front`, wrapping arou
 - `enqueue` writes to the first free slot, at index `(front + count) % data.length`;
 - `dequeue` moves the front forward: `front = (front + 1) % data.length`.
 
-**Example** with capacity 4:
-
-| Operation | Returns | `front` | `count` | `data[0]` | `data[1]` | `data[2]` | `data[3]` | Queue (front → back) |
-|:--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--|
-| `new CircularQueue(4)` | | 0 | 0 | – | – | – | – | (empty) |
-| `enqueue(1)` … `enqueue(4)` | | 0 | 4 | 1 | 2 | 3 | 4 | 1 2 3 4 (full) |
-| `dequeue()` | 1 | 1 | 3 | – | 2 | 3 | 4 | 2 3 4 |
-| `enqueue(5)` | | 1 | 4 | **5** | 2 | 3 | 4 | 2 3 4 5 (full) |
-| `dequeue()` | 2 | 2 | 3 | 5 | – | 3 | 4 | 3 4 5 |
-
-`enqueue(5)` writes to index (1 + 3) % 4 = **0**: the queue has wrapped around. A `–` marks a slot that is not part of the queue; whatever value is left there does not matter.
-
 | Method | What it does |
 |:--|:--|
 | `CircularQueue(int capacity)` | Creates an empty queue that can hold up to `capacity` elements. Throws `IllegalArgumentException` if `capacity < 1`. |
@@ -95,11 +83,11 @@ The elements sit in `count` consecutive slots starting at `front`, wrapping arou
 
 > **Hint:** In `enqueue`, `dequeue` and `peek`, check for the edge case first and throw. Only then change the state of the queue object. 
 
-## Part 3: Using your stack (10 marks)
+## Part 3: Using your stack 
 
 Both methods are `static` and go in `StackApps.java`. Each one must use a `LinkedStack`.
 
-### (a) `static String toBinary(int n)` (5 marks)
+### (a) `static String toBinary(int n)` 
 
 Returns `n` written in binary (base 2), with no leading zeros. Throws `IllegalArgumentException` if `n < 0`.
 
@@ -125,7 +113,7 @@ pushed: 1, 0, 1, 1    popped: 1, 1, 0, 1    result: "1101"
 
 Do not use `Integer.toBinaryString`, `Integer.toString(n, 2)` or `String.format`.
 
-### (b) `static void reverse(CircularQueue q)` (5 marks)
+### (b) `static void reverse(CircularQueue q)` 
 
 Reverses the order of the elements in `q`, so the element at the back ends up at the front. Use a `LinkedStack` as your only extra storage.
 
@@ -148,7 +136,26 @@ The method must change `q` itself. Writing `q = new CircularQueue(...)` inside t
 - `reverse` on an empty queue, a one-element queue and a full queue.
 
 ## Rubric
-### 
+| Part | Method | Points |
+|---|---|---:|
+| **Part 1: LinkedStack.java** | `public void push(int x)` | 1 |
+| | `public int pop()` | 1 |
+| | `public int peek()` | 1 |
+| | `public boolean isEmpty()` | 1 |
+| | `public int size()` | 1 |
+| **Part 1 Total** | | **5** |
+| **Part 2: CircularQueue.java** | `public CircularQueue(int capacity)` | 1 |
+| | `public void enqueue(int x)` | 1 |
+| | `public int dequeue()` | 1 |
+| | `public int peek()` | 1 |
+| | `public boolean isEmpty()` | 1 |
+| | `public boolean isFull()` | 1 |
+| | `public int size()` | 1 |
+| **Part 2 Total** | | **7** |
+| **Part 3** | `public static String toBinary(int n)` | 1 |
+| | `public static void reverse(CircularQueue q)` | 1 |
+| **Part 3 Total** | | **2** |
+| **Total** | | **14** |
 
 ## Submission
 Zip the project directory and submit the ZIP file to Canvas.
@@ -156,4 +163,4 @@ Zip the project directory and submit the ZIP file to Canvas.
 **Your program must compile and run successfully. If your program does not compile or crashes during execution, it will receive a grade of zero.**
 
 ## Deadline
-Sunday, October 11, 2026, at 11:59 PM PDT
+Sunday, October 18, 2026, at 11:59 PM PDT
