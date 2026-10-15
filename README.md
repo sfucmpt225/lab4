@@ -21,7 +21,7 @@ In this lab you build two classic data structures yourself: a **stack** stored i
 Each method you need to write currently throws an `UnsupportedOperationException`. Replace that line with your code. 
 
 ## Lab Rules
-1. **Keep the given interface.** Do not rename the classes or methods, change any parameter or return type, or add a `package` line. Use the given fields. You may add `private` helper methods.
+1. **Keep the given interface.** Do not rename the classes or methods, change any parameter or return type, or replace a `package` line. Use the given fields. You may add `private` helper methods.
 2. **No library collections.** Do not use anything from `java.util` except `NoSuchElementException`: no `ArrayList`, `LinkedList`, `ArrayDeque`, `Stack`, `Arrays` and so on.
 3. **O(1) operations.** Every method in Parts 1 and 2 must run in O(1) time: no loops, and never shift elements.
 4. **Use your stack in Part 3.** Both Part 3 methods must use a `LinkedStack`.
